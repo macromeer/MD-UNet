@@ -27,7 +27,9 @@ from torchvision.ops.deform_conv import deform_conv2d
 
 from timm.models.layers import DropPath, trunc_normal_
 from timm.models.registry import register_model
-from timm.models.layers.helpers import to_2tuple
+#from timm.models.layers.helpers import to_2tuple
+from timm.models.layers import to_2tuple
+
 
 def conv1x1(in_planes: int, out_planes: int, stride: int = 1) -> nn.Conv2d:
     """1x1 convolution"""

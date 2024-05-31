@@ -11,6 +11,7 @@ import torch.backends.cudnn as cudnn
 import torch.nn as nn
 import torch.optim as optim
 import yaml
+from albumentations import Flip
 from albumentations.augmentations import transforms
 from albumentations.core.composition import Compose, OneOf
 from sklearn.model_selection import train_test_split
@@ -253,10 +254,12 @@ def main():
 
 
     
-
-    model = main.__dict__[config['arch']](config['num_classes'],
-                                           config['input_channels'],
-                                           config['deep_supervision'])
+    model = MDUNet(config['num_classes'],
+                       config['input_channels'],
+                       config['deep_supervision'])
+    # model = main.__dict__[config['arch']](config['num_classes'],
+    #                                        config['input_channels'],
+    #                                        config['deep_supervision'])
 
                     
     
@@ -299,7 +302,7 @@ def main():
 
     train_transform = Compose([
         RandomRotate90(),
-        transforms.Flip(),
+        Flip(),
         Resize(config['input_h'], config['input_w']),
         transforms.Normalize(),
         

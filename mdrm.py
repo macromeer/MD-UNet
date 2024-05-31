@@ -9,7 +9,8 @@ from torchvision.ops.deform_conv import deform_conv2d
 from torch.nn import init
 from timm.models.layers import DropPath, trunc_normal_
 from timm.models.registry import register_model
-from timm.models.layers.helpers import to_2tuple
+#from timm.models.layers.helpers import to_2tuple
+from timm.models.layers import to_2tuple
 from timm.models.vision_transformer import _cfg
 def _make_divisible(v, divisor, min_value=None):
     """

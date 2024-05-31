@@ -1,0 +1,6 @@
+pretrained_ckpt/
+__pycache__/
+logs/
+models/
+runs/
+mdunet.sh

@@ -1,4 +1,7 @@
+## Installation
 
-Pytorch1.12.1+Cuda11.3+Python3.8.13+3090
-
-Contact me directly if you have any questions.
+```
+mamba create -n md-unet_env python=3.8
+mamba activate md-unet_env
+pip install torch torchvision pandas pyyaml albumentations tqdm matplotlib timm thop torchstat tensorboard
+```
